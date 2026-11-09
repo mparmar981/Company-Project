@@ -1,0 +1,186 @@
+﻿/* show_product.css */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 40px 16px;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #4facfe 0%, #3a6fd8 100%);
+	font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+	text-align: center;
+}
+
+#form1 > div {
+	color: #ffffff;
+	font-size: 14px;
+}
+
+/* Page title */
+h1 {
+	margin: 0 0 16px;
+	color: #ffffff;
+	font-size: 32px;
+	font-weight: 600;
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Message label (asp:Label renders as <span>) */
+#Label3 {
+	display: inline-block;
+	min-height: 20px;
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* "Back to Companies" and "View Cart" links (plain <a> tags directly in the div) */
+#form1 > div > a {
+	display: inline-block;
+	margin: 0 4px 10px;
+	padding: 8px 18px;
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background 0.2s, color 0.2s;
+}
+
+	#form1 > div > a:hover {
+		background: #ffffff;
+		color: #3a6fd8;
+	}
+
+/* Outer DataList table (grid of products) */
+#DataList1 {
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+	#DataList1 > tbody > tr > td {
+		padding: 0;
+		vertical-align: top;
+		background: transparent;
+	}
+
+	/* Product card (the table inside each ItemTemplate) */
+	#DataList1 table {
+		border: none !important;
+		border-collapse: separate;
+		border-spacing: 0;
+		background: #ffffff;
+		border-radius: 12px;
+		box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+		overflow: hidden;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+
+		#DataList1 table:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+		}
+
+		#DataList1 table td {
+			padding: 18px 14px;
+			border: none;
+			text-align: center;
+		}
+
+	/* Product image */
+	#DataList1 img {
+		display: block;
+		margin: 0 auto 4px;
+		width: 180px;
+		height: 180px;
+		object-fit: cover;
+		border-radius: 10px;
+		border: 1px solid #e2e8f0;
+	}
+
+	/* Labels inside the cards (asp:Label renders as <span>).
+   !important is needed because Font-Bold, Font-Size and ForeColor render as inline styles. */
+	#DataList1 span {
+		display: block;
+		margin: 8px 0;
+		font-family: inherit;
+	}
+
+	/* Product name */
+	#DataList1 [id*="Label1"] {
+		color: #2d3748 !important;
+		font-size: 18px !important;
+		font-weight: 600 !important;
+	}
+
+	/* Model */
+	#DataList1 [id*="Label2"] {
+		color: #718096 !important;
+		font-size: 13px !important;
+	}
+
+	/* Price */
+	#DataList1 [id*="Label4"] {
+		color: #2f9e5b !important;
+		font-size: 18px !important;
+		font-weight: 700 !important;
+	}
+
+	/* View Details / Add to Cart (asp:LinkButton renders as <a>) */
+	#DataList1 a {
+		display: inline-block;
+		margin: 6px 3px 0;
+		padding: 8px 14px;
+		border-radius: 8px;
+		font-size: 13px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: background 0.2s, color 0.2s;
+	}
+
+	#DataList1 [id*="btnView"] {
+		background: #edf2f7;
+		color: #2d3748;
+	}
+
+		#DataList1 [id*="btnView"]:hover {
+			background: #e2e8f0;
+		}
+
+	#DataList1 [id*="btnCart"] {
+		background: #3a6fd8;
+		color: #ffffff;
+	}
+
+		#DataList1 [id*="btnCart"]:hover {
+			background: #2c58b5;
+		}
+
+/* "No products found" message */
+#lblEmpty {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 12px 22px;
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	color: #ffffff;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* Small screens */
+@media (max-width: 520px) {
+	#DataList1 table {
+		width: 170px !important;
+	}
+
+	#DataList1 img {
+		width: 130px;
+		height: 130px;
+	}
+}

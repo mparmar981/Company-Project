@@ -1,0 +1,201 @@
+﻿/* Add_To_Cart.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 16px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe 0%, #3a6fd8 100%);
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+/* Main card */
+.box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 32px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #1f2d3d;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Welcome label + Continue Shopping link */
+.top {
+    margin-bottom: 20px;
+    color: #4a5568;
+    font-size: 15px;
+}
+
+    .top a {
+        display: inline-block;
+        margin-left: 12px;
+        padding: 6px 16px;
+        background: #edf2f7;
+        border-radius: 20px;
+        color: #2d3748;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+        .top a:hover {
+            background: #3a6fd8;
+            color: #ffffff;
+        }
+
+/* Empty cart message */
+.msg {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 12px 18px;
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    border-radius: 8px;
+    color: #c53030;
+    font-weight: 600;
+}
+
+/* Cart table (GridView) */
+.grid {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+    .grid th {
+        padding: 12px 10px;
+        background: #3a6fd8;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .grid td {
+        padding: 12px 10px;
+        border-bottom: 1px solid #edf2f7;
+        color: #2d3748;
+        font-size: 14px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .grid tr:last-child td {
+        border-bottom: none;
+    }
+
+    .grid tr:nth-child(even) td {
+        background: #f9fafb;
+    }
+
+    .grid tr:hover td {
+        background: #f0f5ff;
+    }
+
+    /* Product image */
+    .grid img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* Quantity dropdown (shown in edit mode) */
+    .grid select {
+        width: 70px;
+        padding: 6px 8px;
+        border: 1px solid #cbd5e0;
+        border-radius: 6px;
+        background: #f9fafb;
+        color: #2d3748;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+        .grid select:focus {
+            outline: none;
+            border-color: #3a6fd8;
+            box-shadow: 0 0 0 3px rgba(58, 111, 216, 0.2);
+        }
+
+    /* Edit / Update / Cancel links */
+    .grid a {
+        display: inline-block;
+        margin: 0 3px;
+        padding: 6px 12px;
+        background: #edf2f7;
+        border-radius: 6px;
+        color: #3a6fd8;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+        .grid a:hover {
+            background: #3a6fd8;
+            color: #ffffff;
+        }
+
+/* Grand total */
+.total {
+    margin-top: 22px;
+    color: #1f2d3d;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+}
+
+#lblGrand {
+    color: #2f9e5b;
+}
+
+/* Proceed to Buy button.
+   !important is needed because the control has an inline Style attribute. */
+#lnkProceedToBuy {
+    padding: 12px 26px !important;
+    background-color: #3a6fd8 !important;
+    border-radius: 8px !important;
+    font-size: 15px !important;
+    transition: background 0.2s, transform 0.1s;
+}
+
+    #lnkProceedToBuy:hover {
+        background-color: #2c58b5 !important;
+    }
+
+    #lnkProceedToBuy:active {
+        transform: scale(0.98);
+    }
+
+/* Small screens: let the table scroll sideways instead of breaking the card */
+@media (max-width: 700px) {
+    .box {
+        padding: 20px 14px;
+    }
+
+    .grid {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .total {
+        text-align: center;
+    }
+}
